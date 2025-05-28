@@ -1,59 +1,59 @@
 // Navegación suave
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scrolling para enlaces de anclaje
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            }
-        });
-    });
+	// Smooth scrolling para enlaces de anclaje
+	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+		anchor.addEventListener("click", function (e) {
+			e.preventDefault();
+			const target = document.querySelector(this.getAttribute("href"));
+			if (target) {
+				target.scrollIntoView({
+					behavior: "smooth",
+					block: "start",
+				});
+			}
+		});
+	});
 
-    // Solo aplicar animaciones en pantallas grandes
-    const isLargeScreen = window.innerWidth > 768;
-    
-    if (isLargeScreen) {
-        // Animaciones al hacer scroll (solo en pantallas grandes)
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px",
-        };
+	// Solo aplicar animaciones en pantallas grandes
+	const isLargeScreen = window.innerWidth > 768;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = "0.2s";
-                    entry.target.style.animation = "fadeInUp 0.4s ease forwards";
-                }
-            });
-        }, observerOptions);
+	if (isLargeScreen) {
+		// Animaciones al hacer scroll (solo en pantallas grandes)
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: "0px 0px -50px 0px",
+		};
 
-        // Observar elementos para animaciones
-        document.querySelectorAll(".feature, .thumbnail").forEach((el) => {
-            observer.observe(el);
-        });
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.style.animationDelay = "0.2s";
+					entry.target.style.animation = "fadeInUp 0.4s ease forwards";
+				}
+			});
+		}, observerOptions);
 
-        // Efecto parallax ligero en el hero (solo en pantallas grandes)
-        window.addEventListener("scroll", () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector(".hero");
-            if (parallax) {
-                const speed = scrolled * 0.2; // Reducido de 0.5 a 0.2
-                parallax.style.transform = `translateY(${speed}px)`;
-            }
-        });
-    } else {
-        // En pantallas pequeñas, mostrar elementos inmediatamente
-        document.querySelectorAll(".feature, .thumbnail").forEach((el) => {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-        });
-    }
+		// Observar elementos para animaciones
+		document.querySelectorAll(".feature, .thumbnail").forEach((el) => {
+			observer.observe(el);
+		});
+
+		// Efecto parallax ligero en el hero (solo en pantallas grandes)
+		window.addEventListener("scroll", () => {
+			const scrolled = window.pageYOffset;
+			const parallax = document.querySelector(".hero");
+			if (parallax) {
+				const speed = scrolled * 0.2; // Reducido de 0.5 a 0.2
+				parallax.style.transform = `translateY(${speed}px)`;
+			}
+		});
+	} else {
+		// En pantallas pequeñas, mostrar elementos inmediatamente
+		document.querySelectorAll(".feature, .thumbnail").forEach((el) => {
+			el.style.opacity = "1";
+			el.style.transform = "translateY(0)";
+		});
+	}
 });
 
 // Animaciones CSS
