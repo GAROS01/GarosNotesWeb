@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Garos Notes - Landing Page</title>
+		<link rel="icon" type="image/x-icon" href="img_note_bg.ico" />
+		<link rel="stylesheet" href="styles/global.css" />
+		<link rel="stylesheet" href="styles/components.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="header">
+			<div class="container">
+				<div class="logo">
+					<img src="img_note_bg.ico" alt="Garos Notes" class="logo-icon" />
+					<h1>Garos Notes</h1>
+				</div>
+				<nav class="navigation">
+					<ul>
+						<li><a href="#features">Características</a></li>
+						<li><a href="#gallery">Galería</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="container">
+				<h1>Bienvenido a Garos Notes</h1>
+				<p>
+					La aplicación de notas más intuitiva y poderosa para organizar tus ideas.
+				</p>
+				<div class="cta-buttons">
+					<a
+						href="https://github.com/GAROS01/GarosNotes/releases"
+						class="btn btn-primary"
+						blank
+						>Descargar Ahora</a
+					>
+					<a href="#features" class="btn btn-secondary">Ver Características</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section id="features" class="features">
+			<div class="container">
+				<h2>Características Principales</h2>
+				<div class="features-grid">
+					<div class="feature">
+						<h3>🎨 Interfaz Intuitiva</h3>
+						<p>
+							Diseño limpio y moderno que facilita la escritura y organización de tus
+							notas sin distracciones.
+						</p>
+					</div>
+					<div class="feature">
+						<h3>📝 Texto Enriquecido</h3>
+						<p>
+							Editor potente basado en Quill.js que permite formato de texto, listas,
+							enlaces y mucho más.
+						</p>
+					</div>
+					<div class="feature">
+						<h3>💻 Resaltado de Código</h3>
+						<p>
+							Soporte completo para resaltado de sintaxis en múltiples lenguajes de
+							programación.
+						</p>
+					</div>
+					<div class="feature">
+						<h3>✅ Checklist para Tareas</h3>
+						<p>
+							Crea listas de tareas interactivas con checkboxes para mantener un
+							seguimiento de tus pendientes.
+						</p>
+					</div>
+					<div class="feature">
+						<h3>💾 Autoguardado</h3>
+						<p>
+							Tus notas se guardan automáticamente mientras escribes, nunca perderás tu
+							trabajo.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Gallery Section -->
+		<section id="gallery" class="gallery">
+			<div class="container">
+				<h2>Galería de la Aplicación</h2>
+				<p class="gallery-description">Descubre cómo se ve Garos Notes en acción</p>
+
+				<!-- Carrusel principal -->
+				<div class="carousel-container">
+					<div class="carousel-wrapper">
+						<button class="carousel-btn prev" id="prevBtn">‹</button>
+						<div class="carousel-track" id="carouselTrack">
+							<div class="carousel-slide active">
+								<img
+									src="images/interfaz.webp"
+									alt="Interfaz principal de Garos Notes"
+								/>
+								<div class="slide-info">
+									<h3>Interfaz Principal</h3>
+									<p>
+										Vista general de la aplicación con lista de notas organizada y fácil
+										navegación
+									</p>
+								</div>
+							</div>
+
+							<div class="carousel-slide">
+								<img src="images/ejemplo.webp" alt="Editor de texto enriquecido" />
+								<div class="slide-info">
+									<h3>Editor de Texto Enriquecido</h3>
+									<p>
+										Editor potente basado en Quill.js que permite formato de texto,
+										listas, enlaces y mucho más
+									</p>
+								</div>
+							</div>
+
+							<div class="carousel-slide">
+								<img src="images/resaltado.webp" alt="Resaltado de código" />
+								<div class="slide-info">
+									<h3>Resaltado de Código</h3>
+									<p>
+										Soporte completo para resaltado de sintaxis en múltiples lenguajes de
+										programación
+									</p>
+								</div>
+							</div>
+
+							<div class="carousel-slide">
+								<img src="images/checklist.webp" alt="Lista de tareas" />
+								<div class="slide-info">
+									<h3>Lista de Tareas Interactiva</h3>
+									<p>
+										Crea checklists interactivos con checkboxes para mantener un
+										seguimiento de tus pendientes
+									</p>
+								</div>
+							</div>
+						</div>
+						<button class="carousel-btn next" id="nextBtn">›</button>
+					</div>
+
+					<!-- Indicadores -->
+					<div class="carousel-indicators">
+						<button class="indicator active" data-slide="0"></button>
+						<button class="indicator" data-slide="1"></button>
+						<button class="indicator" data-slide="2"></button>
+						<button class="indicator" data-slide="3"></button>
+					</div>
+				</div>
+
+				<!-- Miniaturas -->
+				<div class="thumbnails-grid">
+					<div class="thumbnail active" data-slide="0">
+						<img src="images/interfaz.webp" alt="Interfaz principal" />
+						<span>Interfaz Principal</span>
+					</div>
+					<div class="thumbnail" data-slide="1">
+						<img src="images/ejemplo.webp" alt="Editor de texto" />
+						<span>Editor de Texto</span>
+					</div>
+					<div class="thumbnail" data-slide="2">
+						<img src="images/resaltado.webp" alt="Resaltado de código" />
+						<span>Resaltado de Código</span>
+					</div>
+					<div class="thumbnail" data-slide="3">
+						<img src="images/checklist.webp" alt="Lista de tareas" />
+						<span>Lista de Tareas</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-section">
+						<h3>Garos Notes</h3>
+						<p>La mejor aplicación para organizar tus ideas y notas.</p>
+					</div>
+					<div class="footer-section">
+						<h4>Enlaces</h4>
+						<ul>
+							<li><a href="#features">Características</a></li>
+							<li><a href="#gallery">Galería</a></li>
+							<li><a href="https://github.com/GAROS01/GarosNotes">GitHub</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h4></h4>
+						<p>© 2025 GAROSDV. Todos los derechos reservados.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="script/carousel.js"></script>
+		<script src="script/main.js"></script>
+	</body>
+</html>
